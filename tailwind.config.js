@@ -6,6 +6,13 @@ export default {
   ],
   theme: {
     extend: {},
+    screens: {
+      'sm': '640px',
+      'md': '768px',
+      'lg': '992px', // Menú móvil hasta 991px, desktop desde 992px
+      'xl': '1280px',
+      '2xl': '1536px',
+    }
   },
   plugins: [],
 }

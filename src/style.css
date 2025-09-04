@@ -1,3 +1,8 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
