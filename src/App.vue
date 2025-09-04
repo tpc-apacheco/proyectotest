@@ -4,7 +4,7 @@
         <Disclosure as="header" :class="[
           'transition-all duration-300 ease-out z-50',
           isScrolled
-            ? 'fixed top-0 left-0 right-0 bg-stone-50/95 backdrop-blur-md border-b border-stone-200 shadow-sm'
+            ? 'fixed top-0 left-0 right-0 bg-stone-50/95 border-b border-stone-200 shadow-sm'
             : 'absolute top-0 left-0 right-0 bg-transparent'
         ]" v-slot="{ open }" @update:open="handleMenuToggle">
       <div class="max-w-7xl mx-auto px-6 py-4">
@@ -74,7 +74,7 @@
           </button>
 
           <!-- Mobile menu button -->
-                    <DisclosureButton :class="[
+         <DisclosureButton :class="[
             'lg:hidden p-2 rounded-md transition-all duration-300 hover:scale-105',
             isScrolled
               ? 'text-stone-600 hover:text-stone-800 hover:bg-stone-100'
@@ -92,7 +92,7 @@
         <!-- Overlay principal con z-index máximo -->
         <div 
           v-show="open"
-          class="fixed inset-0 bg-black/50 z-[99999] backdrop-blur-sm"
+          class="fixed inset-0 bg-black/50 backdrop-blur-sm"
           style="top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; position: fixed !important;"
         ></div>
         
@@ -108,7 +108,7 @@
           <DisclosureButton
             v-show="open"
             as="div"
-            class="fixed inset-0 bg-transparent z-[99999]"
+            class="fixed inset-0 bg-transparent"
             style="top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; position: fixed !important;"
             aria-hidden="true"
           />
@@ -125,7 +125,7 @@
         >
           <DisclosurePanel 
             v-show="open"
-            class="fixed top-0 right-0 w-80 h-screen bg-stone-50 shadow-2xl z-[999999] will-change-transform border-l border-stone-200"
+            class="fixed top-0 right-0 w-80 h-screen bg-stone-50 shadow-2xl will-change-transform border-l border-stone-200"
             style="top: 0 !important; right: 0 !important; position: fixed !important; height: 100vh !important;"
             static
           >
@@ -147,7 +147,7 @@
               </div>
 
               <!-- Navigation Links -->
-              <div class="flex-1 px-6 py-4 space-y-2 bg-stone-50 flex flex-col justify-center">
+              <div class="flex-1 px-6 py-4 space-y-2 bg-stone-50 flex flex-col justify-start">
                 <DisclosureButton
                   as="a"
                   href="#bandas"
@@ -577,3 +577,8 @@ onUnmounted(() => {
   enableBodyScroll() // Asegurar que el scroll se restaure al desmontar
 })
 </script>
+<style scoped>
+.header-bg {
+  background: rgba(245, 245, 244, 0.95); /* Funciona perfecto */
+}
+</style>
